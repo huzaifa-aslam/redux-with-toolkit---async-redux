@@ -1,0 +1,8 @@
+.disFlex {
+    display: flex;
+}
+
+li span {
+    width: 17%;
+    display: inline-block;
+}
