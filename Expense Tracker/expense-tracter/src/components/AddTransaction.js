@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import { globalContext } from "./../globalContext/Context";
+import './components.css'
+
 import { Form, Button } from "react-bootstrap";
 export const AddTransaction = () => {
   const [amount, setAmount] = useState(0);
@@ -40,9 +42,7 @@ e.preventDefault()
             onChange={getDisc}
             placeholder="Enter Discription..."
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
@@ -55,8 +55,8 @@ e.preventDefault()
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Add
+        <Button variant="primary" type="submit" className="fullWidth">
+          Add Transaction
         </Button>
       </Form>
     </div>

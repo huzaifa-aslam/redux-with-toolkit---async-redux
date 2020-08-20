@@ -1,0 +1,31 @@
+.textCenter {
+    text-align: center;
+}
+
+.bgGainsboro {
+    background-color: gainsboro;
+}
+
+.bgWhite {
+    background-color: white;
+}
+
+.textWhite {
+    color: white;
+}
+
+.bgDanger {
+    background-color: #c72838!important;
+}
+
+.bgSuccess {
+    background-color: #3aad54!important;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.bgHeader {
+    background-color: #373e39f5!important;
+}

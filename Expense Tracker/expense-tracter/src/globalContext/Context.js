@@ -1,12 +1,12 @@
 import React,{createContext,useReducer} from 'react'
 import addReducer from './../reducer/addReducer'
 
-export const initialTransaction={
-    transactions:[
+export const initialTransaction=
+    [
         {id:1,disc:"Cash",amount:2100},
         {id:2,disc:"Expense",amount:-100},
     ]
-}
+
 
 export const globalContext=createContext(initialTransaction);
 
@@ -33,7 +33,7 @@ export const TrasactionProvider = ({ children }) => {
 
   return (
     <globalContext.Provider
-    value={{transaction:state.transactions,addTransaction,deleteTransaction}}
+    value={{state,addTransaction,deleteTransaction}}
     >
       {children}
     </globalContext.Provider>
