@@ -21,9 +21,8 @@ export const ManageProductsSlice = createSlice({
     increament: (state) => {
       state.value += 1;
     },
-    func:(state) => {
-        state.preventDefault();
-      console.log("hello");
+    func:(obj) => {
+      console.log("obj",obj);
     },
     decreament: (state) => {
       state.value -= 1;

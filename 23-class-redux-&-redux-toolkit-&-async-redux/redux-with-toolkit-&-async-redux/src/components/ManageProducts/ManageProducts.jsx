@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { productDataValues,func } from "./ManageProductsSlice";
+import { productDataValues, func } from "./ManageProductsSlice";
 
 export const ManageProducts = () => {
   const data = useSelector(productDataValues);
+  const [name, setName] = useState("");
   const myfunc = useDispatch();
-//   console.log("data",data.);
-// myfunc(()=>func())
+  //   console.log("data",data.);
+  // myfunc(()=>func())
   return (
     <div>
       <h1>Products Data</h1>
@@ -32,16 +33,30 @@ export const ManageProducts = () => {
           })}
         </tbody>
       </table>
-      <form onSubmit={()=>myfunc(func())}>
-          <label>name</label><br/>
-          <input type="text"/><br/>
-          <label>Quantity</label><br/>
-          <input type="number"/><br/>
-          <label>sku</label><br/>
-          <input type="number"/><br/>
-          <label>price</label><br/>
-          <input type="number"/><br/>
-          <button type="submit">Add</button>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setName(e.target.value)
+          myfunc(func(e,name));
+        }}
+      >
+        <label>name</label>
+        <br />
+        <input type="text" onChange={(ev)=>setName(ev.target.value)}/>
+        <br />
+        <label>Quantity</label>
+        <br />
+        <input type="number" />
+        <br />
+        <label>sku</label>
+        <br />
+        <input type="number" />
+        <br />
+        <label>price</label>
+        <br />
+        <input type="number" />
+        <br />
+        <button type="submit">Add</button>
       </form>
     </div>
   );
