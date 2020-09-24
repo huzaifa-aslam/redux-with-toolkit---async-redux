@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import transReducer from "./../Reducer/Reducer";
 const initialTransaction = [
-    { id: 1, desc: "cash", amount: 100 },
+    { id: 1, desc: "cash", amount: 100,quantity:200 },
 ];
 
 export const trnsaction = createContext(initialTransaction);
@@ -17,6 +17,7 @@ export const TrasactionProvider = ({ children }) => {
       payload: {
         amount: transObj.amount,
         desc: transObj.desc,
+        quantity:transObj.quantity
       },
     });
   }

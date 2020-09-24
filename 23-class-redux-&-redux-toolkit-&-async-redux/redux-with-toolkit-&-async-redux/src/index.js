@@ -9,9 +9,9 @@ import { TrasactionProvider } from "./components/Context/Context";
 import ContextManage from './components/ContextManage/ContextManage'
 ReactDOM.render(
   <React.StrictMode>
-    <TrasactionProvider store={store}>
+    <TrasactionProvider >
       <App />
-      <ContextManage/>
+
     </TrasactionProvider>
   </React.StrictMode>,
   document.getElementById("root")
