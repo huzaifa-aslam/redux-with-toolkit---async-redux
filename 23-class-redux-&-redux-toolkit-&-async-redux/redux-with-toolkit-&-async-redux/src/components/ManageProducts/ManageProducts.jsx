@@ -4,9 +4,12 @@ import { productDataValues, func } from "./ManageProductsSlice";
 
 export const ManageProducts = () => {
   const data = useSelector(productDataValues);
-  const [name, setName] = useState("");
-  const myfunc = useDispatch();
-  //   console.log("data",data.);
+  const [nameValue, setName] = useState("");
+  const [quantity, setQuantity] = useState();
+  const [sku, setSku] = useState();
+  const [price, setprice] = useState();
+  const dispatch = useDispatch();
+    // console.log("data",data);
   // myfunc(()=>func())
   return (
     <div>
@@ -21,7 +24,7 @@ export const ManageProducts = () => {
           </tr>
         </thead>
         <tbody>
-          {data.values.map((item, index) => {
+          {data.value.map((item, index) => {
             return (
               <tr key={index}>
                 <td>{item.name}</td>
@@ -36,25 +39,42 @@ export const ManageProducts = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setName(e.target.value)
-          myfunc(func(e,name));
+          // console.log(nameValue, func(nameValue));
+
+          dispatch(func({nameValue,quantity,sku,price}));
         }}
       >
         <label>name</label>
         <br />
-        <input type="text" onChange={(ev)=>setName(ev.target.value)}/>
+        <input type="text" onChange={(ev)=>{
+          // console.log(ev.target.value);
+          setName(ev.target.value)
+
+        }}/>
         <br />
         <label>Quantity</label>
         <br />
-        <input type="number" />
+        <input type="number" onChange={(ev)=>{
+          // console.log(ev.target.value);
+          setQuantity(ev.target.value)
+
+        }}/>
         <br />
         <label>sku</label>
         <br />
-        <input type="number" />
+        <input type="number" onChange={(ev)=>{
+          // console.log(ev.target.value);
+          setSku(ev.target.value)
+
+        }}/>
         <br />
         <label>price</label>
         <br />
-        <input type="number" />
+        <input type="number" onChange={(ev)=>{
+          // console.log(ev.target.value);
+          setprice(ev.target.value)
+
+        }}/>
         <br />
         <button type="submit">Add</button>
       </form>
