@@ -5,12 +5,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import {store} from './components/App/Store'
-
+import { TrasactionProvider } from "./components/Context/Context";
+import ContextManage from './components/ContextManage/ContextManage'
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <TrasactionProvider store={store}>
       <App />
-    </Provider>
+      <ContextManage/>
+    </TrasactionProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
