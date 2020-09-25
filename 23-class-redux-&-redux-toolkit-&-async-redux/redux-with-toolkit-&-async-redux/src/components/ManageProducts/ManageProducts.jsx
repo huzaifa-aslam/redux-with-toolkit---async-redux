@@ -4,7 +4,7 @@ import { productDataValues, func } from "./ManageProductsSlice";
 
 export const ManageProducts = () => {
   const data = useSelector(productDataValues);
-  const [nameValue, setName] = useState("");
+  const [name, setName] = useState("");
   const [quantity, setQuantity] = useState();
   const [sku, setSku] = useState();
   const [price, setprice] = useState();
@@ -41,7 +41,7 @@ export const ManageProducts = () => {
           e.preventDefault();
           // console.log(nameValue, func(nameValue));
 
-          dispatch(func({nameValue,quantity,sku,price}));
+          dispatch(func({name,quantity,sku,price}));
         }}
       >
         <label>name</label>
